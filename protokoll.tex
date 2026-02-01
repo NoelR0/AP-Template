@@ -1,0 +1,175 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Documentclass Einstellungen %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+    a4paper, %Papiergröße
+    12pt, %Schriftgröße
+    bibliography=totocnumbered, %Literaturverzereichnis als Eintrag ins Inhaltsverzeichnis
+    twoside, %Zweiseitiger Druck
+    %oneside, %Einseitiger Druck	
+    BCOR=1cm, %Platz zum Lochen
+]{scrartcl}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Geladene Dateien, für mehr ordnung %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{properties/packages, properties/commands, properties/preferences, properties/details}
+\graphicspath{ {ressources/} }
+% Zu beachten ist:
+% >> packages sind alle im Protokoll benutzen Packete
+% >> preferences sind alle Einstellungen des Protokolls wie pagelayout, packeteinstellungen, usw
+% >> commands sind eigen erstellte commands, um das lange tippen zu sparen
+% >> details hier befinden sich die Details, wie Versuchsdatum, Assistent, Teilnehmer, Versuchsnummer, usw. muss unbedingt ausgefüllt werden!
+
+
+
+
+
+%%%%%%%%%%%%
+% Dokument %
+%%%%%%%%%%%%
+
+\begin{document}
+	
+	
+	%%%%%%%%%%%%%%
+	% Titelseite %
+	%%%%%%%%%%%%%%
+	\thispagestyle{empty} % Auf Titelseite kein pagestyle, sodass man diese selbst gestalten kann
+	
+	\begin{titlepage}
+		% Die ganzen Makros wie \VERSUCHSNAME, \VerfasserEINS, usw sind in der Datei details.sty auszufüllen!
+		\begin{center}
+			\Huge{\textbf{\VERSUCHSNR\ - \VERSUCHSNAME}}\\% \Huge \huge \Large \normalsize \Small usw. bestimmt die SchriftgrÃ¶ÃŸe.
+			\vspace{10mm}% Abstand
+			\Large{Protokoll zum Versuch des Physikalischen Praktikums I von \\ \textbf{\VerfasserEINS\;\& \VerfasserZWEI}}\\
+			\vspace{10mm} 
+			\Large{Universität Stuttgart}\\
+		\end{center}
+		\vspace{1cm}
+		\begin{center}
+			\begin{tabular}{ll}
+				\large{Verfasser:}		& \large{\VerfasserEINS\;(\StudiengangEINS),} \\ 
+				& \large{\MatNoEINS} \\
+				\vspace{0cm}\\
+				& \large{\VerfasserZWEI\;(\StudiengangZWEI),} \\
+				& \large{\MatNoZWEI} \\
+				\vspace{0cm}\\
+				\large{Gruppennummer:}	& \large{\GRUPPENNR} \\
+				\vspace{0cm}\\
+				\large{Versuchsdatum:}	& \large{\VERSUCHSDATUM} \\
+				\vspace{0cm}\\
+				\large{Betreuer:}		& \large{\BETREUER}
+			\end{tabular}
+		\end{center}
+		\vspace{15mm}
+		
+		\begin{center}
+			Stuttgart, den \PROTOKOLLDATUM
+		\end{center}
+		
+	\end{titlepage}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%
+	% Inhaltsverzeichniss %
+	%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\thispagestyle{empty}
+	
+	\tableofcontents 
+	
+	\clearpage %Neue Seite, davor werden alle noch ausstehenden Grafiken/Tabellen platziert.
+	
+	% Ab hier wollen wir nochmals neu die Seiten nummerieren, es fängt wieder mit Seite 1. an
+	\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+	
+
+
+
+    
+	%%%%%%%%%%%%%%%%%%%%
+	% Beginn Protokoll %
+	%%%%%%%%%%%%%%%%%%%%
+	
+	
+	%%%%%%%%%%%%%%%%%
+	% Versuchsziele %
+	%%%%%%%%%%%%%%%%%
+	
+	% Die erste eckige Klammer ist optional, die darin angegebene Bezeichnung steht im Inhaltsverzeichnis anstelle des hinteren (längeren) Namens.
+	\section[Versuchsziel]{Versuchsziel und Versuchsmethode}
+        \SI{3}{\meter\per\second}
+	
+	%%%%%%%%%%%%%%
+	% Grundlagen %
+	%%%%%%%%%%%%%%
+	
+	\section[Grundlagen]{Grundlagen}
+	
+	
+	%%%%%%%%%%%%%%%%%%
+	% Messprinzipien %
+	%%%%%%%%%%%%%%%%%%
+	
+	\section[Messprinzip]{Messprinzip mit Skizze und Versuchsablauf}
+	
+    	\subsection{Aufbau und Geräte}
+            % Hier wird der Grobe aufbau aufgelistet, an besten mit Skizze
+    	
+    	\subsection{Versuch} 
+	
+	
+	%%%%%%%%%%%%%
+	% Messwerte %
+	%%%%%%%%%%%%%
+	
+	\section[Messwerte]{Messwerte}
+        % Messwerte werden in Tabellen eingetragen, Caption ist über der Tabelle und sie soll auch ein wenig beschrieben werden.
+	
+	
+	%%%%%%%%%%%%%%
+	% Auswertung %
+	%%%%%%%%%%%%%%
+	
+	\section{Auswertung}
+	
+	
+	%%%%%%%%%%%%%%%%%%
+	% Fehlerrechnung %
+	%%%%%%%%%%%%%%%%%%
+	
+	\section[Fehlerbetrachtung]{Fehlerbetrachtung}
+
+	
+	%%%%%%%%%%%%%%%%%%%
+	% Zusammenfassung %
+	%%%%%%%%%%%%%%%%%%%
+	
+	\section[Zusammenfassung]{Zusammenfassung}
+	
+	
+	\clearpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%Literaturverzeichnis%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Literatur}
+	\begin{thebibliography}{999}
+		\bibitem{Quelle} Versuchsanleitung zu (Abgerufen am 1.04.2050) 
+	\end{thebibliography}
+	
+	
+	\clearpage
+	%%%%%%%%%%
+	% Anhang %
+	%%%%%%%%%%
+	
+    \section{Anhang}
+        % Hier kommt das Messwertblatt rein
+        %\includepdf[pages=-]{Dateiname.pdf}
+	
+\end{document}

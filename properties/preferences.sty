@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Einstellung für Document%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\raggedbottom
+\allowdisplaybreaks
+\pagenumbering{arabic}
+\setlength{\parindent}{0pt} % Einrückung bei Absatzbegin
+\setlength{\parskip}{2 mm} % Abstand von Absätzen
+\numberwithin{equation}{section} % Die Nummerierung von Gleichungen bekommt die jeweilige Section-Nummer als PrÃ¤fix
+
+
+%%%%%%%%%%%%%
+% Pagestyle %
+%%%%%%%%%%%%%
+
+\pagestyle{scrheadings}%Kopf und FuÃŸzeilen
+\ohead{\textbf{\GRUPPENNR\ - \VERSUCHSNR}} %Header oben links auf linker Seite (ungerade Seitenzahl) und oben rechts auf rechter Seite (gerade Seitenzahl), beinhaltet gruppennummer und VersuchskÃ¼rzel. Im Fall eine einseitigen Dokuments: Header oben rechts
+\ihead{\VerfasserEINS\;\&\;\VerfasserZWEI} %Header oben rechts auf linker Seite und oben links auf rechter Seite. Beinhaltet die Namen der Verfasser. Im Fall eine einseitigen Dokuments: Header oben links!
+\ofoot{\thepage} %Footer unten links auf linker und unten rechts auf rechter Seite, enthÃ¤lt die jeweilige Seitenzahl. Im Fall eines einseitigen Elements: Footer unten rechts!
+\cfoot{\empty} %Mittig unten im Footer soll nichts eingetragen werden 
+\ifoot{\empty} %Footer unten rechts auf linker und unten links auf rechter Seite. Hier ebenfalls leer.
+
+
+%%%%%%%%%%%%%
+%H-Ref Setup%
+%%%%%%%%%%%%%
+
+\hypersetup{
+    bookmarks,
+    colorlinks = true, %Colours links instead of ugly boxes
+    linktocpage = true, %true = Macht nur die Zahlen vom Inhaltsverzeichniss zu Links
+    urlcolor  = black, %Colour for external hyperlinks
+    linkcolor = black, %Colour of internal links
+    citecolor = black, %Colour of citations
+    filecolor = black %Color of linked local files
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einstellungen von der AP-Vorlage %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\sisetup{
+detect-weight=true,
+detect-family=true,locale=DE,
+range-phrase={\,bis\,},
+list-final-separator ={\,\linebreak[0] \text{und}\,},
+separate-uncertainty=true,
+per-mode = power % power: s^-1 m,  power-positive-first: m s^-1, symbol: m/s, fraction: richtiger bruch
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einsellungen für Plots %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\mathdefault#1{#1}
+\everymath=\expandafter{\the\everymath\displaystyle}
+\makeatletter
+\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}
+\makeatother

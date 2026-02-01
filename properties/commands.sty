@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%
+% Columntypes %
+%%%%%%%%%%%%%%%
+
+    \newcolumntype{M}{>{$}c<{$}} % math-mode version of "l" column type
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Newcommands/Renewcommands %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \newcommand{\e}[1]{\,\unit{#1}}
+    \newcommand{\ff}[2]{\left|\pdv{#1}{#2}\right| \cdot \Delta #2}
+    
+    \renewcommand{\l}{\left(}
+    \renewcommand{\r}{\right)}
+    
+    \renewcommand{\eqref}[1]{Gleichung (\ref{#1})}
+    \newcommand{\tabref}[1]{Tabelle \ref{#1}}
+    \newcommand{\secref}[1]{Abschnitt \ref{#1}}
+    \newcommand{\figref}[1]{Abbildung \ref{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Newenvironment/Renewenvironment %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%
+% New Units %
+%%%%%%%%%%%%%
+
+\DeclareSIUnit\curie{Ci}
