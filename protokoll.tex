@@ -17,6 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{properties/packages, properties/commands, properties/preferences, properties/details}
 \graphicspath{ {ressources/} }
+\addbibresource{Literaturverzeichnis/literatur.bib}
 % Zu beachten ist:
 % >> packages sind alle im Protokoll benutzen Packete
 % >> preferences sind alle Einstellungen des Protokolls wie pagelayout, packeteinstellungen, usw
@@ -102,7 +103,7 @@
 	
 	% Die erste eckige Klammer ist optional, die darin angegebene Bezeichnung steht im Inhaltsverzeichnis anstelle des hinteren (längeren) Namens.
 	\section[Versuchsziel]{Versuchsziel und Versuchsmethode}
-        \SI{3}{\meter\per\second}
+        
 	
 	%%%%%%%%%%%%%%
 	% Grundlagen %
@@ -128,8 +129,7 @@
 	%%%%%%%%%%%%%
 	
 	\section[Messwerte]{Messwerte}
-        % Messwerte werden in Tabellen eingetragen, Caption ist über der Tabelle und sie soll auch ein wenig beschrieben werden.
-	
+
 	
 	%%%%%%%%%%%%%%
 	% Auswertung %
@@ -157,12 +157,8 @@
 	%%%Literaturverzeichnis%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	\section{Literatur}
-	\begin{thebibliography}{999}
-		\bibitem{Quelle} Versuchsanleitung zu (Abgerufen am 1.04.2050) 
-	\end{thebibliography}
-	
-	
+	\printbibliography
+
 	\clearpage
 	%%%%%%%%%%
 	% Anhang %
