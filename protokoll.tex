@@ -110,7 +110,7 @@
 	%%%%%%%%%%%%%%
 	
 	\section[Grundlagen]{Grundlagen}
-	
+	   Das hier ist eine modifizierte Kopie der \LaTeX-Vorlage für Protokolle des Anfängerpraktikums der Universität Stuttgarts \cite{homepage}.
 	
 	%%%%%%%%%%%%%%%%%%
 	% Messprinzipien %
@@ -129,6 +129,28 @@
 	%%%%%%%%%%%%%
 	
 	\section[Messwerte]{Messwerte}
+
+        \begin{table}[H]
+            \centering
+            \caption{
+                Dies ist eine Beispieltabelle für die Messwert Sektion.
+                Es empfiehlt sich alle Tabellen ungefähr im gleichem Stil zu bewahren.
+                Der Tabellentyp S ist von \texttt{siunitx} und Formatiert die Nummern direkt richtig.
+                Mit [table-number-alignment=left] hinter dem S, kann ausgesucht werden, wie die Nummern ausgerichtet werden.
+                Zu sehen ist auch, dass die Nummer am Dezimaltrennzeichen ausgerichtet sind.
+            }
+            \begin{tabular}{c S}
+                \toprule
+                Beschreibung & {Messwert} \\
+                A & 23.44 \\
+                \midrule
+                B & 463.25 \\
+                \midrule
+                C & 1712.53 \\
+                \bottomrule
+            \end{tabular}
+            \label{tab:beispieltabelle}
+        \end{table}
 
 	
 	%%%%%%%%%%%%%%
