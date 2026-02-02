@@ -158,6 +158,38 @@
 	%%%%%%%%%%%%%%
 	
 	\section{Auswertung}
+        Die Auswertung soll in mehrere Unterkapitel getrennt werden, je ein Kapitel pro Auswertungsziel.
+
+        \subsection{Cooler Plot}
+            In diesem Unterkapitel wird ein Plot erstellt.
+            Ziel dieses Plots ist es die Funktion $1/\sqrt{x}$ zu untersuchen und deren Eigenschaften zu ermitteln.
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}%, trim axis right]
+                    \begin{axis}[
+                        width=0.5\linewidth, % Scale the plot to \linewidth
+                        grid=major, % Display a grid
+                        grid style={dashed,gray!40}, % Set the style
+                        axis background/.style={fill=gray!5},
+                        scaled y ticks=false,
+                    ]
+                    
+                    \addplot+ [
+                        mark=none,
+                        line width=1pt,  % Dünnere Linie
+                        domain=0:4,    % x-Bereich
+                        samples=40,       % Nur 2 Punkte für straight line (super dünn und effizient)
+                        color=red
+                    ] { 1/sqrt(x) };
+                \end{axis}
+                \end{tikzpicture}
+                \label{fig:beispielplot}
+                \caption{
+                    Plot der Funktion $f(x) = 1/\sqrt{x}$.
+                    Erstellt über das TikZ und pgfplot Paket.
+                }
+            \end{figure}
+            
 	
 	
 	%%%%%%%%%%%%%%%%%%
