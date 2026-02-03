@@ -1,18 +1,18 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Einstellung für Document%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Satzeinstellungen %
 
 \raggedbottom
 \allowdisplaybreaks
 \pagenumbering{arabic}
 \setlength{\parindent}{0pt} % Einrückung bei Absatzbegin
 \setlength{\parskip}{2 mm} % Abstand von Absätzen
+
+
+% Einstellungen für Gleichungen %
+
 \numberwithin{equation}{section} % Die Nummerierung von Gleichungen bekommt die jeweilige Section-Nummer als PrÃ¤fix
 
 
-%%%%%%%%%%%%%
-% Pagestyle %
-%%%%%%%%%%%%%
+% Einstellungen für den Header/Footer %
 
 \pagestyle{scrheadings}%Kopf und FuÃŸzeilen
 \ohead{\textbf{\GRUPPENNR\ - \VERSUCHSNR}} %Header oben links auf linker Seite (ungerade Seitenzahl) und oben rechts auf rechter Seite (gerade Seitenzahl), beinhaltet gruppennummer und VersuchskÃ¼rzel. Im Fall eine einseitigen Dokuments: Header oben rechts
@@ -22,9 +22,7 @@
 \ifoot{\empty} %Footer unten rechts auf linker und unten links auf rechter Seite. Hier ebenfalls leer.
 
 
-%%%%%%%%%%%%%
-%H-Ref Setup%
-%%%%%%%%%%%%%
+% Hyperreft Einstellungen %
 
 \hypersetup{
     bookmarks,
@@ -37,10 +35,7 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Einstellungen von der AP-Vorlage %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% Einstellungen für siunitx %
 
 \sisetup{
 detect-weight=true,
@@ -52,18 +47,7 @@ per-mode = power % power: s^-1 m,  power-positive-first: m s^-1, symbol: m/s, fr
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Einsellungen für Plots %
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\mathdefault#1{#1}
-\everymath=\expandafter{\the\everymath\displaystyle}
-\makeatletter
-\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}
-\makeatother
-
-
-% Einstellungen für Caption
+% Einstellungen für Caption %
 
 \captionsetup{
     font=small,

@@ -15,14 +15,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Geladene Dateien, für mehr ordnung %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{properties/packages, properties/commands, properties/preferences, properties/details}
-\graphicspath{ {ressources/} }
+\usepackage{import/packages, import/commands, import/setup, import/details-titelseite}
+\graphicspath{ {bilder/} }
 \addbibresource{Literaturverzeichnis/literatur.bib}
 % Zu beachten ist:
 % >> packages sind alle im Protokoll benutzen Packete
-% >> preferences sind alle Einstellungen des Protokolls wie pagelayout, packeteinstellungen, usw
+% >> setup sind alle Einstellungen des Protokolls wie pagelayout, packeteinstellungen usw.
 % >> commands sind eigen erstellte commands, um das lange tippen zu sparen
-% >> details hier befinden sich die Details, wie Versuchsdatum, Assistent, Teilnehmer, Versuchsnummer, usw. muss unbedingt ausgefüllt werden!
+% >> details-titelseite hier befinden sich die Details, wie Versuchsdatum, Assistent, Teilnehmer, Versuchsnummer, usw. muss unbedingt ausgefüllt werden!
 
 
 
@@ -172,7 +172,10 @@
                         grid=major, % Display a grid
                         grid style={dashed,gray!40}, % Set the style
                         axis background/.style={fill=gray!5},
-                        scaled y ticks=false,
+                        scaled y ticks=true,
+                        tick label style = {font=\small},
+                        every axis label/.style = {font=\small},
+                        legend style={at={(0.5,1.2)},anchor=north,legend columns = 0}, % Legende über dem Plot
                     ]
                     
                     \addplot+ [
@@ -182,25 +185,32 @@
                         samples=40,       % Nur 2 Punkte für straight line (super dünn und effizient)
                         color=red
                     ] { 1/sqrt(x) };
+                    \addlegendentry{$\frac{1}{\sqrt{x}}$} % Eintrag für die Legende
                 \end{axis}
                 \end{tikzpicture}
                 \label{fig:beispielplot}
                 \caption{
-                    Plot der Funktion $f(x) = 1/\sqrt{x}$.
+                    Plot der Funktion $f(x) = \frac{1}{\sqrt{x}}$.
                     Erstellt über das TikZ und pgfplot Paket.
                 }
             \end{figure}
 
             Das ist ein \enquote{dummy}-Text, ihn durchlesen hat keinen Wert.
             Er dient nur zu Testzwecken.
+            Hier auch als Test eine Inline Mathe $\frac{1}{2}$ okay!
             
 	
 	
 	%%%%%%%%%%%%%%%%%%
 	% Fehlerrechnung %
 	%%%%%%%%%%%%%%%%%%
-	
-	\section[Fehlerbetrachtung]{Fehlerbetrachtung}
+
+	\section[Fehlerrechnung]{Fehlerrechnung}
+        \begin{equation}
+            \Delta A = \ffp{A}{B} + \ffp{A}{C}
+        \end{equation}
+
+        \subsection{Fehlerdiskussion}
 
 	
 	%%%%%%%%%%%%%%%%%%%
