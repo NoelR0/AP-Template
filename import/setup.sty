@@ -1,31 +1,30 @@
-% Satzeinstellungen %
+% Satzeinstellungen 
 
-\raggedbottom
-\allowdisplaybreaks
-\pagenumbering{arabic}
-\setlength{\parindent}{0pt} % Einrückung bei Absatzbegin
-\setlength{\parskip}{2 mm} % Abstand von Absätzen
+\raggedbottom % Standart für oneside, bei twoside sieht es aber trozdem besser aus | Es wird kein vspace verwendet, dass jede Seite exakt gleichlang ist
+\allowdisplaybreaks % Erlaubt Seitenumbruch bei Gleichungen
 
 
-% Einstellungen für Gleichungen %
+% Seitenzahleinstellungen 
+
+\pagenumbering{arabic} % Arabisches Zahlen für Seitenzahlen
+
+
+% Einstellungen für Gleichungen 
 
 \numberwithin{equation}{section} % Die Nummerierung von Gleichungen bekommt die jeweilige Section-Nummer als PrÃ¤fix
 
 
-% Einstellungen für den Header/Footer %
+% Einstellungen für den Header/Footer 
 
+\clearpairofpagestyles % Löscht alle alten Header und Footer definitionen
 \pagestyle{scrheadings}%Kopf und FuÃŸzeilen
 \ohead{\textbf{\GRUPPENNR\ - \VERSUCHSNR}} %Header oben links auf linker Seite (ungerade Seitenzahl) und oben rechts auf rechter Seite (gerade Seitenzahl), beinhaltet gruppennummer und VersuchskÃ¼rzel. Im Fall eine einseitigen Dokuments: Header oben rechts
 \ihead{\VerfasserEINS\;\&\;\VerfasserZWEI} %Header oben rechts auf linker Seite und oben links auf rechter Seite. Beinhaltet die Namen der Verfasser. Im Fall eine einseitigen Dokuments: Header oben links!
-\ofoot{\thepage} %Footer unten links auf linker und unten rechts auf rechter Seite, enthÃ¤lt die jeweilige Seitenzahl. Im Fall eines einseitigen Elements: Footer unten rechts!
-\cfoot{\empty} %Mittig unten im Footer soll nichts eingetragen werden 
-\ifoot{\empty} %Footer unten rechts auf linker und unten links auf rechter Seite. Hier ebenfalls leer.
+\ofoot{\pagemark} %Footer unten links auf linker und unten rechts auf rechter Seite, enthÃ¤lt die jeweilige Seitenzahl. Im Fall eines einseitigen Elements: Footer unten rechts!
 
-
-% Hyperreft Einstellungen %
+% Hyperreft Einstellungen 
 
 \hypersetup{
-    bookmarks,
     colorlinks = true, %Colours links instead of ugly boxes
     linktocpage = true, %true = Macht nur die Zahlen vom Inhaltsverzeichniss zu Links
     urlcolor  = black, %Colour for external hyperlinks
@@ -35,22 +34,31 @@
 }
 
 
-% Einstellungen für siunitx %
+% Einstellungen für siunitx 
 
 \sisetup{
-detect-weight=true,
-detect-family=true,locale=DE,
-range-phrase={\,bis\,},
-list-final-separator ={\,\linebreak[0] \text{und}\,},
-separate-uncertainty=true,
-per-mode = power % power: s^-1 m,  power-positive-first: m s^-1, symbol: m/s, fraction: richtiger bruch
+    detect-weight=true, % Schaut ob der Text drumherum fett, kursiv usw ist
+    detect-family=true, % Schaut welche fontfamily der text drumherum hat
+    locale=DE, % Normen für Deutschland
+    range-phrase={\,bis\;}, % was für \numrange{...}{...} verwendet wird, standard - % Vielleicht Dr. Kübler fragen, ob \, mit \; ausgetauscht werden sollte
+    list-final-separator ={\linebreak[0] \text{und}\,}, % was als letztes steht bei \numlist{1;2;3;4} -> 1, 2, 3 und 4
+    separate-uncertainty=true, % Ändert die Klammernotation für Unsicherheiten mit einem +-
+    per-mode = symbol-or-fraction % m/s und \frac{m}{s} als standart
 }
 
 
-% Einstellungen für Caption %
+% Einstellungen für Caption 
 
 \captionsetup{
-    font=small,
-    singlelinecheck=false,
-    width=0.9\textwidth
+    font=small, % Kleinere Schriftart für Captions
+    singlelinecheck=true, % Falls Caption kleiner ist als eine Zeile wird bei false die caption linkszentrisch gesetzt, bei true in der mitte
+    width=0.9\textwidth % Caption wird max. 90% der Größe der Textbreite sein
+}
+
+
+% Einstellung für Listen
+
+\setlist{
+  parsep=0pt, % Abstand zwischen Absätzen innerhalb eines Items
+  itemsep=0.5\parskip % Abstand zwischen den Items
 }

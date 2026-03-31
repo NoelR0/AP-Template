@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%
+% Titelseite %
+%%%%%%%%%%%%%%
+\thispagestyle{empty} % Auf Titelseite kein pagestyle, sodass man diese selbst gestalten kann
+
+\begin{titlepage}
+    % Die ganzen Makros wie \VERSUCHSNAME, \VerfasserEINS, usw sind in der Datei details.sty auszufüllen!
+    \begin{center}
+        \Huge{\textbf{\VERSUCHSNR\ - \VERSUCHSNAME}}\\% \Huge \huge \Large \normalsize \Small usw. bestimmt die SchriftgrÃ¶ÃŸe.
+        \vspace{10mm}% Abstand
+        \Large{Protokoll zum Versuch des Physikalischen Praktikums I von \\ \textbf{\VerfasserEINS\;\& \VerfasserZWEI}}\\
+        \vspace{10mm} 
+        \Large{Universität Stuttgart}\\
+    \end{center}
+    \vspace{1cm}
+    \begin{center}
+        \begin{tabular}{ll}
+            \large{Verfasser:}		& \large{\VerfasserEINS\;(\StudiengangEINS),} \\ 
+            & \large{\MatNoEINS} \\
+            \vspace{0cm}\\
+            & \large{\VerfasserZWEI\;(\StudiengangZWEI),} \\
+            & \large{\MatNoZWEI} \\
+            \vspace{0cm}\\
+            \large{Gruppennummer:}	& \large{\GRUPPENNR} \\
+            \vspace{0cm}\\
+            \large{Versuchsdatum:}	& \large{\VERSUCHSDATUM} \\
+            \vspace{0cm}\\
+            \large{Betreuer:}		& \large{\BETREUER}
+        \end{tabular}
+    \end{center}
+    \vspace{15mm}
+    
+    \begin{center}
+        Stuttgart, den \PROTOKOLLDATUM
+    \end{center}
+    
+\end{titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Inhaltsverzeichniss %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
+
+\tableofcontents 
+
+\clearpage %Neue Seite, davor werden alle noch ausstehenden Grafiken/Tabellen platziert.
+
+% Ab hier wollen wir nochmals neu die Seiten nummerieren, es fängt wieder mit Seite 1. an
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
