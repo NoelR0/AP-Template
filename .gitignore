@@ -1,0 +1,63 @@
+# Alles ignorieren ...
+*
+
+# ... außer relevante Dateien für LaTeX & Physik-Protokolle
+
+# LaTeX Quelldateien
+!*.tex
+!*.sty
+!*.cls
+!*.bib
+!*.bst
+
+# Grafiken & Plots
+!*.pgf
+!*.pdf_tex
+!*.svg
+!*.png
+!*.jpg
+!*.jpeg
+!*.eps
+!grafiken/**/*.pdf
+
+
+# Daten & Auswertung
+!*.csv
+!*.tsv
+!*.dat
+!*.txt
+!*.py
+!*.ipynb
+
+# Konfiguration & Projektdateien
+!*.yaml
+!*.yml
+!*.toml
+!*.json
+!*.ini
+!.gitignore
+!*.md
+!Makefile
+!latexmkrc
+!.latexmkrc
+
+# Verzeichnisse erlauben (rekursiv)
+!*/
+
+# --- Swap- & Backup-Dateien (explizit, überschreibt !-Regeln) ---
+# Vim/Neovim
+*.swp
+*.swo
+*.swn
+*.swm
+.*.swp
+.*.swo
+.*.swn
+# Emacs
+*~
+\#*\#
+.\#*
+# VSCode / andere Editoren
+*.tmp
+*.bak
+*.orig
