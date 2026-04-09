@@ -102,35 +102,38 @@ Die Auswertung soll in mehrere Unterkapitel getrennt werden, je ein Kapitel pro 
 
 \subsection{Cooler Plot}
 In diesem Unterkapitel wird ein Plot erstellt.
-Ziel dieses Plots ist es die Funktion $1/\sqrt{x}$ zu untersuchen und deren Eigenschaften zu ermitteln.
+Ziel dieses Plots ist es die Funktion $sqrt{x}$ zu untersuchen und deren Eigenschaften zu ermitteln.
 
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}%, trim axis right]
 		\begin{axis}[
-		width=0.5\linewidth, % Scale the plot to \linewidth
-		grid=major, % Display a grid
-		grid style={dashed,gray!40}, % Set the style
-		axis background/.style={fill=gray!5},
-		scaled y ticks=true,
-		tick label style = {font=\small},
-		every axis label/.style = {font=\small},
-		legend style={at={(0.5,1.2)},anchor=north,legend columns = 0}, % Legende über dem Plot
+			width=0.7\linewidth, % Die globale Einstellung mit 0.8\linewidth wird einfach überschrieben
+			xlabel={$x$},
+			ylabel={$f(x)$},
+			legend pos=south east, % Dort platzieren, wo keine Messdaten sind!
 		]
-
-		\addplot+ [
-		mark=none,
-		line width=1pt,  % Dünnere Linie
-		domain=0:4,    % x-Bereich
-		samples=40,       % Nur 2 Punkte für straight line (super dünn und effizient)
-		color=red
-		] { 1/sqrt(x) };
-		\addlegendentry{$\frac{1}{\sqrt{x}}$} % Eintrag für die Legende
+		% Die Messdaten
+			\addplot+[
+				only marks,
+				mark=*,          % Ausgefüllte Kreise als Markierung
+				mark size=1.5pt,  % Etwas kleinere Punkte sehen oft sauberer aus
+				y-fehler,
+			] table [col sep=semicolon, x=x, y=y, y error=y_err] {test.csv};
+			% Der Fit
+			\addplot+ [
+				mark=none,
+				line width=1.2pt,  % Dickere Linie
+				domain=0:20,    % x-Bereich
+				samples=100,       % Nur 2 Punkte für straight line (super dünn und effizient)
+			] { sqrt(x) };	
+			% Legende
+			\legend{Messwerte, Fit-Funktion ($y = \sqrt{x}$)}
 		\end{axis}
 	\end{tikzpicture}
 	\label{fig:beispielplot}
 	\caption{
-		Plot der Funktion $f(x) = \frac{1}{\sqrt{x}}$.
+		Plot der Funktion $f(x) = \sqrt{x}$.
 		Erstellt über das TikZ und pgfplot Paket.
 	}
 \end{figure}
@@ -150,6 +153,8 @@ Hier auch als Test eine Inline Mathe $\frac{1}{2}$ okay!
 \end{equation}
 
 \subsection{Fehlerdiskussion}
+Hier werden mögliche Fehlerquellen und deren Auswirkungen auf die Mess- und berechneten Ergebnisse besprochen.
+Auch können vergleiche mit dem Literaturwert hier reinkommen.
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -157,6 +162,14 @@ Hier auch als Test eine Inline Mathe $\frac{1}{2}$ okay!
 %%%%%%%%%%%%%%%%%%%
 
 \section[Zusammenfassung]{Zusammenfassung}
+Hier werden nochmal alle die von der Aufgabenstellung verlangten berechneten Größen mit Fehlern aufgelistet.
+
+
+%%%%%%%%%%%%%
+% Bibelvers %
+%%%%%%%%%%%%%
+\vspace*{\fill}
+\dictum[2. Mose 33:11]{Und der Herr redete mit Mose von Angesicht zu Angesicht, wie ein Mann mit seinem Freund redet; und er kehrte wieder ins Lager zurück. Aber sein Diener Josua, der Sohn Nuns, der junge Mann, wich nicht aus dem Inneren des Zeltes.}
 
 
 \clearpage

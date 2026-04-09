@@ -52,7 +52,8 @@
 \captionsetup{
     font=small, % Kleinere Schriftart für Captions
     singlelinecheck=true, % Falls Caption kleiner ist als eine Zeile wird bei false die caption linkszentrisch gesetzt, bei true in der mitte
-    width=0.9\textwidth % Caption wird max. 90% der Größe der Textbreite sein
+    width=0.9\textwidth, % Caption wird max. 90% der Größe der Textbreite sein
+    labelfont=bf
 }
 
 
@@ -62,3 +63,60 @@
   parsep=0pt, % Abstand zwischen Absätzen innerhalb eines Items
   itemsep=0.5\parskip % Abstand zwischen den Items
 }
+
+
+% Einstellung für plots
+
+\pgfplotsset{
+    compat=1.18,
+    every axis/.append style={
+        scaled ticks=true, % Dann kommt vor allen y-ticks bpsw. 1.2 * 10^-2, oder false und dann U in mV bspw. 
+        width=0.8\linewidth, % Etwas größer als Standard, da oft passender
+        grid=major,
+        grid style={dashed, gray!40},
+        every axis label/.style={font=\small},      % Beschriftung (z.B. "Strecke s in m")
+        tick label style={font=\footnotesize},      % Zahlen an den Achsen (z.B. "0.5")
+        /pgf/number format/use comma,
+        minor tick num=4, % Fügt 4 kleine Striche zwischen den Hauptwerten ein
+        tick align=inside,
+        legend cell align={left}, % Lässt die Legende Linkbündig sein
+        legend style={font=\footnotesize,},
+        cycle list/Dark2,
+        table/search path={messdaten/},
+        % Einstellungen für Fehlerbalken
+        y-fehler/.style={
+        error bars/.cd,
+            y dir=both,
+            y explicit,
+            error mark=-,
+            error mark options={rotate=90, mark size=2pt, line width=0.6pt}
+        },
+        % 2. Nur X-Fehler
+        mit x fehlern/.style={
+            error bars/.cd,
+                x dir=both, 
+                x explicit,
+                error mark=-, % pgfplots dreht das "-" für X-Fehler automatisch senkrecht!
+                error mark options={mark size=2pt, line width=0.6pt}
+        },
+        % 3. X- und Y-Fehler gleichzeitig
+        mit xy fehlern/.style={
+            error bars/.cd,
+                y dir=both, 
+                y explicit,
+                x dir=both, 
+                x explicit,
+                error mark=-, 
+                error mark options={mark size=2pt, line width=0.6pt}
+        }
+    }
+}
+
+
+% Einstellungen für Bibelverse
+
+\setkomafont{dictumtext}{\itshape\small}
+\setkomafont{dictumauthor}{\normalfont}
+\renewcommand*\dictumwidth{.75\linewidth}
+\renewcommand*\dictumauthorformat[1]{--- #1}
+\renewcommand*\dictumrule{}
