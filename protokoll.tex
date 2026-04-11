@@ -8,6 +8,10 @@
     12pt, % Schriftgröße
 	parskip=half, % Abstand statt Einrückung
     oneside, % Einseitiger Druck	
+	DIV=calc,
+	%BCOR=1cm % Setzt Platz zum Lochen
+	%twoside, % Zweiseitiger Druck
+	% >> Die letzten beiden Optionen entkommentieren, falls das Protokoll ausgedruckt wird!
 ]{scrartcl}
 
 
@@ -24,6 +28,7 @@
 % >> setup sind alle Einstellungen des Protokolls wie pagelayout, packeteinstellungen usw.
 % >> commands sind eigen erstellte commands, um das lange tippen zu sparen
 % >> details-titelseite hier befinden sich die Details, wie Versuchsdatum, Assistent, Teilnehmer, Versuchsnummer, usw. muss unbedingt ausgefüllt werden!
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,6 +57,7 @@
 
 \section[Grundlagen]{Grundlagen}
 Das hier ist eine modifizierte Kopie der \LaTeX-Vorlage für Protokolle des Anfängerpraktikums der Universität Stuttgarts \cite{homepage}.
+
 
 %%%%%%%%%%%%%%%%%%
 % Messprinzipien %
