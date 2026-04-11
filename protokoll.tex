@@ -8,8 +8,8 @@
     12pt, % Schriftgröße
 	parskip=half, % Abstand statt Einrückung
     oneside, % Einseitiger Druck	
-	DIV=calc,
-	%BCOR=1cm % Setzt Platz zum Lochen
+	DIV=calc, % Berechnet den Satzspiegel automatisch (KOMA-Script)
+	%BCOR=1cm % Setzt Platz zum Lochen (Bindungskorrektur)
 	%twoside, % Zweiseitiger Druck
 	% >> Die letzten beiden Optionen entkommentieren, falls das Protokoll ausgedruckt wird!
 ]{scrartcl}
@@ -114,27 +114,27 @@ Ziel dieses Plots ist es die Funktion $sqrt{x}$ zu untersuchen und deren Eigensc
 	\centering
 	\begin{tikzpicture}%, trim axis right]
 		\begin{axis}[
-			width=0.7\linewidth, % Die globale Einstellung mit 0.8\linewidth wird einfach überschrieben
-			xlabel={$x$},
-			ylabel={$f(x)$},
+			width=0.7\linewidth, % Die globale Einstellung mit 0.8\linewidth wird einfach überschrieben, kann auch ausgelassen werden.
+			xlabel={$x$}, % Achsenbeschriftung für die x-Achse
+			ylabel={$f(x)$}, % Achsenbeschriftung für die y-Achse
 			legend pos=south east, % Dort platzieren, wo keine Messdaten sind!
 		]
 		% Die Messdaten
 			\addplot+[
-				only marks,
+				only marks, % Nur die Datenpunkte ohne Verbindungslinie zeichnen
 				mark=*,          % Ausgefüllte Kreise als Markierung
 				mark size=1.5pt,  % Etwas kleinere Punkte sehen oft sauberer aus
-				y-fehler,
-			] table [col sep=semicolon, x=x, y=y, y error=y_err] {test.csv};
+				y-fehler, % Nutzt den in setup.sty definierten Stil für Y-Fehlerbalken
+			] table [col sep=semicolon, x=x, y=y, y error=y_err] {test.csv}; % Daten aus CSV laden
 			% Der Fit
 			\addplot+ [
-				mark=none,
+				mark=none, % Keine Markierungen für die Fit-Linie
 				line width=1.2pt,  % Dickere Linie
-				domain=0:20,    % x-Bereich
-				samples=100,       % Nur 2 Punkte für straight line (super dünn und effizient)
+				domain=0:20,    % x-Bereich für den Plot
+				samples=100,       % Anzahl der Stützstellen für eine glatte Kurve
 			] { sqrt(x) };	
 			% Legende
-			\legend{Messwerte, Fit-Funktion ($y = \sqrt{x}$)}
+			\legend{Messwerte, Fit-Funktion ($y = \sqrt{x}$)} % Legende des Plots, Reihenfolge ist wichtig!
 		\end{axis}
 	\end{tikzpicture}
 	\label{fig:beispielplot}

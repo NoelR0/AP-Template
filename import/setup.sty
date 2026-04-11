@@ -11,16 +11,16 @@
 
 % Einstellungen für Gleichungen 
 
-\numberwithin{equation}{section} % Die Nummerierung von Gleichungen bekommt die jeweilige Section-Nummer als PrÃ¤fix
+\numberwithin{equation}{section} % Die Nummerierung von Gleichungen bekommt die jeweilige Section-Nummer als Präfix
 
 
 % Einstellungen für den Header/Footer 
 
 \clearpairofpagestyles % Löscht alle alten Header und Footer definitionen
-\pagestyle{scrheadings}%Kopf und FuÃŸzeilen
-\ohead{\textbf{\GRUPPENNR\ - \VERSUCHSNR}} %Header oben links auf linker Seite (ungerade Seitenzahl) und oben rechts auf rechter Seite (gerade Seitenzahl), beinhaltet gruppennummer und VersuchskÃ¼rzel. Im Fall eine einseitigen Dokuments: Header oben rechts
+\pagestyle{scrheadings}%Kopf und Fu0zeilen
+\ohead{\textbf{\GRUPPENNR\ - \VERSUCHSNR}} %Header oben links auf linker Seite (ungerade Seitenzahl) und oben rechts auf rechter Seite (gerade Seitenzahl), beinhaltet gruppennummer und Versuchskürzel. Im Fall eine einseitigen Dokuments: Header oben rechts
 \ihead{\VerfasserEINS\;\&\;\VerfasserZWEI} %Header oben rechts auf linker Seite und oben links auf rechter Seite. Beinhaltet die Namen der Verfasser. Im Fall eine einseitigen Dokuments: Header oben links!
-\ofoot{\pagemark} %Footer unten links auf linker und unten rechts auf rechter Seite, enthÃ¤lt die jeweilige Seitenzahl. Im Fall eines einseitigen Elements: Footer unten rechts!
+\ofoot{\pagemark} %Footer unten links auf linker und unten rechts auf rechter Seite, enthält die jeweilige Seitenzahl. Im Fall eines einseitigen Elements: Footer unten rechts!
 
 % Hyperreft Einstellungen 
 
@@ -53,7 +53,7 @@
     font=small, % Kleinere Schriftart für Captions
     singlelinecheck=true, % Falls Caption kleiner ist als eine Zeile wird bei false die caption linkszentrisch gesetzt, bei true in der mitte
     width=0.9\textwidth, % Caption wird max. 90% der Größe der Textbreite sein
-    labelfont=bf
+    labelfont=bf % Fettgedrucktes Label (z.B. "Abbildung 1:")
 }
 
 
@@ -68,55 +68,55 @@
 % Einstellung für plots
 
 \pgfplotsset{
-    compat=1.18,
+    compat=1.18, % Nutzt Kompatibilitätsmodus für pgfplots Version 1.18
     every axis/.append style={
         scaled ticks=true, % Dann kommt vor allen y-ticks bpsw. 1.2 * 10^-2, oder false und dann U in mV bspw. 
         width=0.8\linewidth, % Etwas größer als Standard, da oft passender
-        grid=major,
-        grid style={dashed, gray!40},
+        grid=major, % Zeigt das Hauptgitter im Plot an
+        grid style={dashed, gray!40}, % Stil des Gitters (gestrichelt, hellgrau)
         every axis label/.style={font=\small},      % Beschriftung (z.B. "Strecke s in m")
         tick label style={font=\footnotesize},      % Zahlen an den Achsen (z.B. "0.5")
-        /pgf/number format/use comma,
+        /pgf/number format/use comma, % Verwendet ein Komma als Dezimaltrennzeichen
         minor tick num=4, % Fügt 4 kleine Striche zwischen den Hauptwerten ein
-        tick align=inside,
+        tick align=inside, % Die Achsenstriche zeigen ins Innere des Plots
         legend cell align={left}, % Lässt die Legende Linkbündig sein
-        legend style={font=\footnotesize,},
-        cycle list/Dark2,
-        table/search path={messdaten/},
+        legend style={font=\footnotesize,}, % Kleinere Schriftart für die Legende
+        cycle list/Dark2, % Nutzt das Farbschema 'Dark2' für aufeinanderfolgende Plots
+        table/search path={messdaten/}, % Standardpfad, in dem pgfplots nach Datendateien sucht
         % Einstellungen für Fehlerbalken
         y-fehler/.style={
-        error bars/.cd,
-            y dir=both,
-            y explicit,
-            error mark=-,
-            error mark options={rotate=90, mark size=2pt, line width=0.6pt}
+        error bars/.cd, % Wechselt in den Unterpfad für Fehlerbalken-Einstellungen
+            y dir=both, % Fehlerbalken in beide Richtungen (oben/unten)
+            y explicit, % Fehlerwerte werden explizit aus den Daten gelesen
+            error mark=-, % Nutzt einen Strich als Endmarkierung des Fehlerbalkens
+            error mark options={rotate=90, mark size=2pt, line width=0.6pt} % Formatiert die Endmarkierungen
         },
         % 2. Nur X-Fehler
         mit x fehlern/.style={
             error bars/.cd,
-                x dir=both, 
-                x explicit,
+                x dir=both, % Fehlerbalken in beide Richtungen (links/rechts)
+                x explicit, % Fehlerwerte werden explizit aus den Daten gelesen
                 error mark=-, % pgfplots dreht das "-" für X-Fehler automatisch senkrecht!
-                error mark options={mark size=2pt, line width=0.6pt}
+                error mark options={mark size=2pt, line width=0.6pt} % Formatiert die Endmarkierungen
         },
         % 3. X- und Y-Fehler gleichzeitig
         mit xy fehlern/.style={
             error bars/.cd,
-                y dir=both, 
-                y explicit,
-                x dir=both, 
-                x explicit,
-                error mark=-, 
-                error mark options={mark size=2pt, line width=0.6pt}
+                y dir=both, % Fehlerbalken in Y-Richtung (oben/unten)
+                y explicit, % Y-Fehlerwerte explizit aus Daten
+                x dir=both, % Fehlerbalken in X-Richtung (links/rechts)
+                x explicit, % X-Fehlerwerte explizit aus Daten
+                error mark=-, % Endmarkierung
+                error mark options={mark size=2pt, line width=0.6pt} % Formatierung
         }
     }
 }
 
 
-% Einstellungen für Bibelverse
+% Einstellungen für Bibelverse 
 
-\setkomafont{dictumtext}{\itshape\small}
-\setkomafont{dictumauthor}{\normalfont}
-\renewcommand*\dictumwidth{.75\linewidth}
-\renewcommand*\dictumauthorformat[1]{--- #1}
-\renewcommand*\dictumrule{}
+\setkomafont{dictumtext}{\itshape\small} % Formatierung für den Text des Zitats (kursiv und klein)
+\setkomafont{dictumauthor}{\normalfont} % Formatierung für den Autor des Zitats (normale Schrift)
+\renewcommand*\dictumwidth{.75\linewidth} % Breite des Zitats (75% der Zeilenbreite)
+\renewcommand*\dictumauthorformat[1]{--- #1} % Formatierung für den Autorennamen (mit Gedankenstrich davor)
+\renewcommand*\dictumrule{} % Entfernt die standardmäßige Trennlinie zwischen Zitat und Autor
