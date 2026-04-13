@@ -1,6 +1,25 @@
 % Neue Befehle %
+\ExplSyntaxOn
 
-    \newcommand{\ffp}[2]{\left\lvert \frac{\partial #1}{\partial #2} \right\rvert \cdot \Delta #2}
+\NewDocumentCommand{\ffp}{ m m }{
+    % Sequenz vor jedem Aufruf leeren
+    \seq_clear:N \l_my_error_terms_seq
+
+    % Über die kommagetrennte Liste iterieren (#2)
+    \clist_map_inline:nn { #2 }
+    {
+        % HIER IST DIE KORREKTUR: \seq_put_right:Nn statt \seq_put_right:N
+        \seq_put_right:Nn \l_my_error_terms_seq 
+            { 
+                \left\lvert \frac{\partial #1}{\partial ##1} \right\rvert \cdot \Delta ##1   
+            }
+    }
+
+    % Die fertige Formel ausgeben
+    \seq_use:Nn \l_my_error_terms_seq { + }
+}
+
+\ExplSyntaxOff
 
 
 % Neue Umgebungen %
