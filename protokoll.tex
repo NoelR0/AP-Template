@@ -110,39 +110,7 @@ Die Auswertung soll in mehrere Unterkapitel getrennt werden, je ein Kapitel pro 
 In diesem Unterkapitel wird ein Plot erstellt.
 Ziel dieses Plots ist es die Funktion $sqrt{x}$ zu untersuchen und deren Eigenschaften zu ermitteln.
 
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}%, trim axis right]
-		\begin{axis}[
-			width=0.7\linewidth, % Die globale Einstellung mit 0.8\linewidth wird einfach überschrieben, kann auch ausgelassen werden.
-			xlabel={$x$}, % Achsenbeschriftung für die x-Achse
-			ylabel={$f(x)$}, % Achsenbeschriftung für die y-Achse
-			legend pos=south east, % Dort platzieren, wo keine Messdaten sind!
-		]
-		% Die Messdaten
-			\addplot+[
-				only marks, % Nur die Datenpunkte ohne Verbindungslinie zeichnen
-				mark=*,          % Ausgefüllte Kreise als Markierung
-				mark size=1.5pt,  % Etwas kleinere Punkte sehen oft sauberer aus
-				y-fehler, % Nutzt den in setup.sty definierten Stil für Y-Fehlerbalken
-			] table [col sep=semicolon, x=x, y=y, y error=y_err] {test.csv}; % Daten aus CSV laden
-			% Der Fit
-			\addplot+ [
-				mark=none, % Keine Markierungen für die Fit-Linie
-				line width=1.2pt,  % Dickere Linie
-				domain=0:20,    % x-Bereich für den Plot
-				samples=100,       % Anzahl der Stützstellen für eine glatte Kurve
-			] { sqrt(x) };	
-			% Legende
-			\legend{Messwerte, Fit-Funktion ($y = \sqrt{x}$)} % Legende des Plots, Reihenfolge ist wichtig!
-		\end{axis}
-	\end{tikzpicture}
-	\label{fig:beispielplot}
-	\caption{
-		Plot der Funktion $f(x) = \sqrt{x}$.
-		Erstellt über das TikZ und pgfplot Paket.
-	}
-\end{figure}
+\input{grafiken/plots/beispielplot1.tex}
 
 Das ist ein \enquote{dummy}-Text, ihn durchlesen hat keinen Wert.
 Er dient nur zu Testzwecken.
