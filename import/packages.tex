@@ -1,67 +1,65 @@
+% ==============================================================================
+% DOKUMENTKODIERUNG, SPRACHE & SCHRIFT
+% ==============================================================================
 \usepackage[utf8]{inputenc}             % Ermöglicht UTF-8-Kodierung im Quelltext (bei pdfLaTeX nötig)
-
 \usepackage[T1]{fontenc}                % Verwendet T1-Schriftkodierung für korrekte Trennung/Umlaute
-
 \usepackage{lmodern}                    % Latin-Modern-Schriften passend zu T1
-
 \usepackage[ngerman]{babel}             % Deutsche Sprache: Silbentrennung, Bezeichnungen, Typografie
-
-\usepackage[x11names]{xcolor}           % Erweiterte Farbdefinitionen (X11-Farbnamen)
-
-\usepackage{scrlayer-scrpage}           % Kopf- und Fußzeilen (KOMA-Script)
-
+\usepackage{microtype}                  % Allein das Einbinden des Paketes verbessert den Blocksatz optich, also ein must have
+\usepackage{csquotes}                   % Sprachabhängige Anführungszeichen
 \usepackage{textcase}                   % Kontrollierte Groß-/Kleinschreibung in beweglichen Argumenten
 
+% ==============================================================================
+% SEITENLAYOUT & STRUKTUR
+% ==============================================================================
+\usepackage{scrlayer-scrpage}           % Kopf- und Fußzeilen (KOMA-Script)
+\usepackage[final]{pdfpages}            % Einbinden externer PDF-Seiten | Wichtig für die Messdaten
+%\usepackage{subfiles}                   % Essentiel beim aufteilen in viele .tex, ermöglich auch da saubere referenzierung und einzelne kompilierung
+%\usepackage{import}                     % Fügt neuen befehl hinzu, dass .tex dateien im unterordner nicht die main.tex als referenzpunkt für pfade nehmen
+% Falls ich es umändere, dass jede Sektion eine .tex Datei ist, sind diese beiden Pakete definitiv von relevanz
+
+% ==============================================================================
+% FARBEN & BOXEN
+% ==============================================================================
+\usepackage[x11names]{xcolor}           % Erweiterte Farbdefinitionen (X11-Farbnamen)
+\usepackage{tcolorbox}                  % Farbige Boxen für Text, Theoreme etc.
+    \tcbuselibrary{most}                % Lädt nahezu alle tcolorbox-Erweiterungen
+\usepackage{framed}                     % Einfache Rahmen um Text
+
+% ==============================================================================
+% TABELLEN & LISTEN
+% ==============================================================================
 \usepackage{tabularray}                 % Eine Sammlung an Tabellenverbessurngspaketen
 \UseTblrLibrary{booktabs}               % Ermöglicht die booktabs Tabellen zu haben
+\usepackage{multicol}                   % Zellen über mehrere Zeilen bzw. Spalten
+\usepackage{enumitem}                   % Kontrolle über Listen (Abstände, Labels)
 
-\usepackage{multirow, multicol}         % Zellen über mehrere Zeilen bzw. Spalten
-
-\usepackage[final]{pdfpages}            % Einbinden externer PDF-Seiten | Wichtig für die Messdaten
-
-\usepackage{microtype}                  % Allein das Einbinden des Paketes verbessert den Blocksatz optich, also ein must have
-
+% ==============================================================================
+% ABBILDUNGEN & GLEITOBJEKTE
+% ==============================================================================
+\usepackage{float}                      % Erzwingt Platzierung von Gleitobjekten mit [H]
 \usepackage{caption}                    % Anpassung von Beschriftungen (Abbildungen/Tabellen)
 %Reihenfolge Einhalten!
 \usepackage{subcaption}                 % Teilabbildungen mit eigenen Beschriftungen | Modernere Version von subfigures
 
+% ==============================================================================
+% MATHEMATIK, PHYSIK & EINHEITEN
+% ==============================================================================
 \usepackage{amsmath, amsthm, amssymb}   % Mathematische Umgebungen, Symbole, Theoreme
-
 \usepackage{mathtools}                  % Erweiterung für amsmath
-
-%Physics ist nicht so gut, da es viele Konflikte mit Paketen hat!
-%\usepackage[arrowdel]{physics}         % Kurzbefehle für physikalische Notation (Ableitungen, Bra-Ket, ...)
-%\let\qty\relax                         %\qty von physics entfernen, da siunitx es auch verwendet
-
 \usepackage{derivative}                 % Fügt starke Makros für Ableitungen hinzu | Nicht nötig, falls physics aktiv ist
-
 \usepackage{siunitx}                    % Einheitliche Darstellung von Zahlen und SI-Einheiten | sehr wichtig für das AP
-
 \usepackage{upgreek}                    % Aufrechte griechische Buchstaben im Mathematikmodus
-
-\usepackage{listings}                   % Darstellung von Quellcode
-
-\usepackage{enumitem}                   % Kontrolle über Listen (Abstände, Labels)
-
-\usepackage{environ}                    % Definieren eigener Umgebungen mit Zugriff auf deren Inhalt
-
-\usepackage{tcolorbox}                  % Farbige Boxen für Text, Theoreme etc.
-    \tcbuselibrary{most}                % Lädt nahezu alle tcolorbox-Erweiterungen
-
-\usepackage{framed}                     % Einfache Rahmen um Text
-
-\usepackage{float}                      % Erzwingt Platzierung von Gleitobjekten mit [H]
-
 \usepackage{cancel}                     % Durchstreichen von mathematischen Ausdrücken
-
 \usepackage{empheq}                     % Hervorheben und Einrahmen von Gleichungssystemen
 
-\usepackage{csquotes}                   % Sprachabhängige Anführungszeichen
+%Physics ist nicht so gut, da es viele Konflikte mit Paketen hat!
+%\usepackage[arrowdel]{physics}          % Kurzbefehle für physikalische Notation (Ableitungen, Bra-Ket, ...)
+%\let\qty\relax                          %\qty von physics entfernen, da siunitx es auch verwendet
 
-\usepackage{xparse}                     % Verbessert das Erstellen von eigenen Macros
-
-\usepackage[backend=biber,]{biblatex}   % Paket zur erzeugung von Literaturverzeichnissen | Einfach Quellen in literatur.bib machen
-
+% ==============================================================================
+% GRAFIKEN & PLOTS
+% ==============================================================================
 \usepackage{tikz}                       % Zeichnen von Vektorgrafiken
     \usepackage{scalerel}                   % Relatives Skalieren von Symbolen
     \usepackage{pict2e}                     % Erweiterte picture-Umgebung
@@ -76,6 +74,19 @@
     \usepgfplotslibrary{statistics}         % Statistikplots
     \usepgfplotslibrary{fillbetween}        % Flächen zwischen Kurven
     \usepgfplotslibrary{colorbrewer}        % Ein Farbpaket für Kurven und Messpunkte, sodass keine eigenen Farben ausgewählt werden müssen
+
+% ==============================================================================
+% PROGRAMMIERUNG & EIGENE MAKROS
+% ==============================================================================
+\usepackage{listings}                   % Darstellung von Quellcode
+\usepackage{environ}                    % Definieren eigener Umgebungen mit Zugriff auf deren Inhalt
+\usepackage{xparse}                     % Verbessert das Erstellen von eigenen Macros
+
+% ==============================================================================
+% LITERATUR, LINKS & QUERVERWEISE
+% ==============================================================================
+\usepackage[backend=biber,]{biblatex}   % Paket zur erzeugung von Literaturverzeichnissen | Einfach Quellen in literatur.bib machen
+\usepackage{xurl}                       % Sorgt für schönere url
 
 % Hyperref immer vor cleveref!
 \usepackage{hyperref}                   % Hyperlinks und PDF-Metadaten (immer zuletzt laden)
