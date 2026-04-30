@@ -47,13 +47,14 @@
 }
 
 
-% Einstellungen für Caption 
+% Einstellungen für Captions 
 
 \captionsetup{
-    font=small, % Kleinere Schriftart für Captions
-    singlelinecheck=true, % Falls Caption kleiner ist als eine Zeile wird bei false die caption linkszentrisch gesetzt, bei true in der mitte
-    width=0.9\textwidth, % Caption wird max. 90% der Größe der Textbreite sein
-    labelfont=bf % Fettgedrucktes Label (z.B. "Abbildung 1:")
+    font=small,            % Schriftgröße der caption kleiner machen als normale Schriftgröße
+    width=0.9\textwidth,   % Breite auf 90% begrenzen (die Box wird standardmäßig zentriert)
+    singlelinecheck=true,  % Einzeilige Captions zentrieren (ist Standard, hier zur Verdeutlichung)
+    labelfont=bf,          % Das Label (z.B. "Abbildung 1:") fett drucken
+    format=plain           % Entspricht \setcapindent{0em} (Blocksatz, zweite Zeile beginnt links unter dem Label) 
 }
 
 
