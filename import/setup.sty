@@ -22,28 +22,29 @@
 \ihead{\VerfasserEINS\;\&\;\VerfasserZWEI} %Header oben rechts auf linker Seite und oben links auf rechter Seite. Beinhaltet die Namen der Verfasser. Im Fall eine einseitigen Dokuments: Header oben links!
 \ofoot{\pagemark} %Footer unten links auf linker und unten rechts auf rechter Seite, enthält die jeweilige Seitenzahl. Im Fall eines einseitigen Elements: Footer unten rechts!
 
-% Hyperreft Einstellungen 
+% Hyperref Einstellungen 
 
 \hypersetup{
-    colorlinks = true, %Colours links instead of ugly boxes
-    linktocpage = true, %true = Macht nur die Zahlen vom Inhaltsverzeichniss zu Links
-    urlcolor  = black, %Colour for external hyperlinks
-    linkcolor = black, %Colour of internal links
-    citecolor = black, %Colour of citations
-    filecolor = black %Color of linked local files
+    bookmarks = true, % Literaturverzeichnis in der PDF-Datei
+    colorlinks = true, % Farbige Links anstatt Boxen
+    linktocpage = true, % true = Macht nur die Zahlen vom Inhaltsverzeichniss zu Links
+    urlcolor  = black, % Farbe für externe Hyperlinks
+    linkcolor = black, % Farbe für interne Links
+    citecolor = black, % Farbe für Zitate
+    filecolor = black % Farbe für verlinkte lokale Dateien
 }
 
 
 % Einstellungen für siunitx 
 
 \sisetup{
-    detect-weight=true, % Schaut ob der Text drumherum fett, kursiv usw ist
+	detect-weight=true, % Schaut ob der Text drumherum fett, kursiv usw ist
     detect-family=true, % Schaut welche fontfamily der text drumherum hat
     locale=DE, % Normen für Deutschland
-    range-phrase={\,bis\;}, % was für \numrange{...}{...} verwendet wird, standard - % Vielleicht Dr. Kübler fragen, ob \, mit \; ausgetauscht werden sollte
-    list-final-separator ={\linebreak[0] \text{und}\,}, % was als letztes steht bei \numlist{1;2;3;4} -> 1, 2, 3 und 4
+    range-phrase={~\text{bis}~}, % was für \numrange{...}{...} verwendet wird, standard - % Vielleicht Dr. Kübler fragen, ob \, mit \; ausgetauscht werden sollte
+    list-final-separator ={\;\text{und}~}, % was als letztes steht bei \numlist{1;2;3;4} -> 1, 2, 3 und 4
     separate-uncertainty=true, % Ändert die Klammernotation für Unsicherheiten mit einem +-
-    per-mode=symbol-or-fraction % m/s und \frac{m}{s} als standart
+    per-mode = symbol-or-fraction % m/s und \frac{m}{s} als standart 
 }
 
 

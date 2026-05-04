@@ -30,7 +30,7 @@
 % TABELLEN & LISTEN
 % ==============================================================================
 \usepackage{tabularray}                 % Eine Sammlung an Tabellenverbessurngspaketen
-\UseTblrLibrary{booktabs}               % Ermöglicht die booktabs Tabellen zu haben
+    \UseTblrLibrary{booktabs}               % Ermöglicht die booktabs Tabellen zu haben
 \usepackage{multicol}                   % Zellen über mehrere Zeilen bzw. Spalten
 \usepackage{enumitem}                   % Kontrolle über Listen (Abstände, Labels)
 
@@ -38,7 +38,8 @@
 % ABBILDUNGEN & GLEITOBJEKTE
 % ==============================================================================
 \usepackage{float}                      % Erzwingt Platzierung von Gleitobjekten mit [H]
-\usepackage[section]{placeins}
+\usepackage[section]{placeins}          % Ermöglicht das Platzieren von float barriers
+\usepackage{graphicx}                   % Ermöglicht das Einbinden von Grafiken in PDF, PNG usw. Form
 \usepackage{caption}                    % Anpassung von Beschriftungen (Abbildungen/Tabellen)
 %Reihenfolge Einhalten!
 \usepackage{subcaption}                 % Teilabbildungen mit eigenen Beschriftungen | Modernere Version von subfigures
@@ -86,7 +87,7 @@
 % ==============================================================================
 % LITERATUR, LINKS & QUERVERWEISE
 % ==============================================================================
-\usepackage[backend=biber,]{biblatex}   % Paket zur erzeugung von Literaturverzeichnissen | Einfach Quellen in literatur.bib machen
+\usepackage[backend=biber]{biblatex}   % Paket zur erzeugung von Literaturverzeichnissen | Einfach Quellen in literatur.bib machen
 \usepackage{xurl}                       % Sorgt für schönere url
 
 % Hyperref immer vor cleveref!
