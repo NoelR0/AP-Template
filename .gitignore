@@ -43,6 +43,9 @@
 
 # Verzeichnisse erlauben (rekursiv)
 !*/
+# .venv und vscode ordner nicht erlauben (explizit, überschreibt !-Regeln)
+*.venv
+*.vscode
 
 # --- Swap- & Backup-Dateien (explizit, überschreibt !-Regeln) ---
 # Vim/Neovim
