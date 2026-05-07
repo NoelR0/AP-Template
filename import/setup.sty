@@ -17,10 +17,11 @@
 % Einstellungen für den Header/Footer 
 
 \clearpairofpagestyles % Löscht alle alten Header und Footer definitionen
-\pagestyle{scrheadings}%Kopf und Fu0zeilen
-\ohead{\textbf{\GRUPPENNR\ - \VERSUCHSNR}} %Header oben links auf linker Seite (ungerade Seitenzahl) und oben rechts auf rechter Seite (gerade Seitenzahl), beinhaltet gruppennummer und Versuchskürzel. Im Fall eine einseitigen Dokuments: Header oben rechts
-\ihead{\VerfasserEINS\;\&\;\VerfasserZWEI} %Header oben rechts auf linker Seite und oben links auf rechter Seite. Beinhaltet die Namen der Verfasser. Im Fall eine einseitigen Dokuments: Header oben links!
-\ofoot{\pagemark} %Footer unten links auf linker und unten rechts auf rechter Seite, enthält die jeweilige Seitenzahl. Im Fall eines einseitigen Elements: Footer unten rechts!
+\pagestyle{scrheadings} % Kopf und Fußzeilen von scrheading aktivieren
+\ohead{\textbf{\GRUPPENNR\ - \VERSUCHSNR}} % Äußerer Teil der Kopfzeile, enthält Gruppenummer und Versuchsnummer
+\ihead{\VerfasserEINS\;\&\;\VerfasserZWEI} % Innerer Teil der Kopfzeile, enthält die Namen der beiden Studenten
+\ofoot{\pagemark} % Äußerer Teil der Fußzeile, enthält die Seitenzahl
+
 
 % Hyperref Einstellungen 
 
@@ -41,10 +42,10 @@
 	detect-weight=true, % Schaut ob der Text drumherum fett, kursiv usw ist
     detect-family=true, % Schaut welche fontfamily der text drumherum hat
     locale=DE, % Normen für Deutschland
-    range-phrase={~\text{bis}~}, % was für \numrange{...}{...} verwendet wird, standard - % Vielleicht Dr. Kübler fragen, ob \, mit \; ausgetauscht werden sollte
+    range-phrase={~\text{bis}~}, % was für \numrange{...}{...} verwendet wird \numrange{1}{5} -> 1 bis 5
     list-final-separator ={\;\text{und}~}, % was als letztes steht bei \numlist{1;2;3;4} -> 1, 2, 3 und 4
-    separate-uncertainty=true, % Ändert die Klammernotation für Unsicherheiten mit einem +-
-    per-mode = symbol-or-fraction % m/s und \frac{m}{s} als standart 
+    separate-uncertainty=true, % Ändert die Klammernotation für Unsicherheiten zu einem +-
+    per-mode = symbol-or-fraction % m/s und \frac{m}{s} als Standard 
 }
 
 
