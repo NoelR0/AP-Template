@@ -109,7 +109,7 @@
             error mark options={rotate=90, mark size=2pt, line width=0.6pt} % Formatiert die Endmarkierungen
         },
         % 2. Nur X-Fehler
-        mit x fehlern/.style={
+        x-fehler/.style={
             error bars/.cd,
                 x dir=both, % Fehlerbalken in beide Richtungen (links/rechts)
                 x explicit, % Fehlerwerte werden explizit aus den Daten gelesen
@@ -117,7 +117,7 @@
                 error mark options={mark size=2pt, line width=0.6pt} % Formatiert die Endmarkierungen
         },
         % 3. X- und Y-Fehler gleichzeitig
-        mit xy fehlern/.style={
+        xy-fehler/.style={
             error bars/.cd,
                 y dir=both, % Fehlerbalken in Y-Richtung (oben/unten)
                 y explicit, % Y-Fehlerwerte explizit aus Daten
