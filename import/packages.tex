@@ -96,8 +96,11 @@
     sorting=none                        % Nicht alphabetisch Sortieren. Sondern das erste Zitat im Dokument ist auch die Nr. 1 usw.
     ] {biblatex}                        % Paket zur erzeugung von Literaturverzeichnissen | Einfach Quellen in literatur.bib machen
 \usepackage{xurl}                       % Sorgt für schönere url
-
-% Hyperref immer vor cleveref!
-\usepackage{hyperref}                   % Hyperlinks und PDF-Metadaten (immer zuletzt laden)
+% Hyperref so weit hinten wie möglich, aber immer vor cleveref!
+\usepackage{hyperref}                   % Hyperlinks und PDF-Metadaten
 %Cleveref als letztes
-\usepackage[noabbrev, nameinlink, ngerman]{cleveref}         % Intelligente Querverweise (Abb., Gl., Tab. automatisch)
+\usepackage[
+    noabbrev,                           % Gleichung 1 anstatt Gl. 1 usw.
+    nameinlink,                         % Auch das Gleichung ist ein klickbarer Link. Ohne könnte man nur die Zahl anklicken
+    ngerman                             % Explizit nochmal auf deutsche Sprache stellen. Ohne diese Einstellung hatte ich Probleme
+    ] {cleveref}                        % Viele Quality of Life Verbesserungen fürs Referenzieren.
