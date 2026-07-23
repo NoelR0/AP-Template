@@ -52,7 +52,8 @@
     range-phrase={~\text{bis}~}, % was für \numrange{...}{...} verwendet wird \numrange{1}{5} -> 1 bis 5
     list-final-separator ={\;\text{und}~}, % was als letztes steht bei \numlist{1;2;3;4} -> 1, 2, 3 und 4
     separate-uncertainty=true, % Ändert die Klammernotation für Unsicherheiten zu einem +-
-    per-mode = symbol-or-fraction % m/s und \frac{m}{s} als Standard 
+    per-mode = symbol-or-fraction, % m/s und \frac{m}{s} als Standard 
+    sticky-per=true % Nach \per sind alle folgenden Einheiten im Nenner
 }
 
 
