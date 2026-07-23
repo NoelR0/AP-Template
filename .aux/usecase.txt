@@ -1,0 +1,1 @@
+Ablageordner der Hilfsdateien für die Kompilation, damit sie nicht den Root-Ordner vollblähen. 

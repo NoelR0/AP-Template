@@ -19,10 +19,10 @@
 % Geladene Dateien, für mehr ordnung %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{./import/packages}
-\usepackage{import/commands, import/setup, import/details-titelseite}
-\graphicspath{ {grafiken/abbildungen/} }
-\addbibresource{Literaturverzeichnis/literatur.bib}
+\input{preamble/packages}
+\usepackage{preamble/commands, preamble/setup, preamble/details-titelseite}
+\graphicspath{ {import/abbildungen/} }
+\addbibresource{literaturverzeichnis/literatur.bib}
 % Zu beachten ist:
 % >> packages sind alle im Protokoll benutzen Packete
 % >> setup sind alle Einstellungen des Protokolls wie pagelayout, packeteinstellungen usw.
@@ -41,7 +41,7 @@
 % Titelseite und ToC %
 %%%%%%%%%%%%%%%%%%%%%%
 
-\input{import/titelseite.tex}
+\input{import/titelseite/titelseite.tex}
 
 %%%%%%%%%%%%%%%%%
 % Versuchsziele %
@@ -114,7 +114,7 @@ Hier wird eine Gleichung referenziert \cref{eq:gleichung}
 In diesem Unterkapitel wird ein Plot erstellt.
 Ziel der \cref{fig:beispielplot} ist es die Funktion \(\sqrt{x}\) zu untersuchen und deren Eigenschaften zu ermitteln.
 
-\input{grafiken/plots/beispielplot1.tex}
+\input{import/plots/beispielplot1.tex}
 
 Das ist ein \enquote{dummy}-Text, ihn durchlesen hat keinen Wert.
 Er dient nur zu Testzwecken.
