@@ -3,6 +3,9 @@
 
 # ... außer relevante Dateien für LaTeX & Physik-Protokolle
 
+# Gitignore
+!.gitignore
+
 # LaTeX Quelldateien
 !*.tex
 !*.sty
